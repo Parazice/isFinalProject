@@ -36,7 +36,6 @@ if "location" not in st.session_state:
     st.session_state.age = 12
     st.session_state.gender = "Male"
     st.session_state.location = "USA"
-    st.session_state.playtime = 0.00
     st.session_state.genre = "Strategy"
     st.session_state.purchase = "Yes"
     st.session_state.difficulty = "Easy"
@@ -50,7 +49,6 @@ def randomize_values():
     st.session_state.age = random.randint(12, 60)
     st.session_state.gender = random.choice(["Male", "Female"])
     st.session_state.location = random.choice(["USA", "Europe", "Asia", "Other"])
-    st.session_state.playtime = random.uniform(0, 24)
     st.session_state.genre = random.choice(['Strategy', 'Simulation', 'Action', 'RPG', 'Sports'])
     st.session_state.purchase = random.choice(["Yes", "No"])
     st.session_state.difficulty = random.choice(['Easy', 'Medium', 'Hard'])
@@ -63,7 +61,6 @@ st.button("🎲 Randomize", on_click=randomize_values)
 age = st.number_input("Age", min_value=12, max_value=60, step=1, value=int(st.session_state.age))
 gender = st.selectbox("Gender", ["Male", "Female"], index=["Male", "Female"].index(st.session_state.gender))
 location = st.selectbox("Location", ["USA", "Europe", "Asia", "Other"], index = ["USA", "Europe", "Asia", "Other"].index(st.session_state.location))
-playtime = st.number_input("Play Time (Hours/Day)", min_value=0.00, max_value=24.00, step=0.01, value=float(st.session_state.playtime))
 genre = st.selectbox("Game Genre", ['Strategy', 'Simulation', 'Action', 'RPG', 'Sports'], index = ['Strategy', 'Simulation', 'Action', 'RPG', 'Sports'].index(st.session_state.genre))
 purchase = st.radio("In-game Purchases", ["Yes", "No"], index=["Yes", "No"].index(st.session_state.purchase))
 difficulty = st.selectbox("Difficulty", ['Easy', 'Medium', 'Hard'], index = ['Easy', 'Medium', 'Hard'].index(st.session_state.difficulty))
@@ -77,8 +74,8 @@ if purchase == "Yes":
 else:
     purchase = 0
 
-input_data = pd.DataFrame([[age, gender, location, genre, playtime, purchase, difficulty, session, duration, level, achieve]], 
-                          columns=['Age', 'Gender', 'Location', 'GameGenre', 'PlayTimeHours', 'InGamePurchases', 'GameDifficulty', 
+input_data = pd.DataFrame([[age, gender, location, genre, purchase, difficulty, session, duration, level, achieve]], 
+                          columns=['Age', 'Gender', 'Location', 'GameGenre', 'InGamePurchases', 'GameDifficulty', 
                                    'SessionsPerWeek', 'AvgSessionDurationMinutes', 'PlayerLevel', 'AchievementsUnlocked'])
 
 for column in input_data.columns:

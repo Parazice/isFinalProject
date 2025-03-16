@@ -3,6 +3,28 @@ import streamlit as st
 st.title("Model Training")
 mlTab, nnTab = st.tabs(["Machine Learning", "Neural Networks"])
 with mlTab:
+    st.header("Get to know the algorithms")
+    st.subheader("Random Forest Classifier")
+    st.write(
+        "A Random Forest is a collection of decision trees that work together to make predictions. In this article, we'll explain how the Random Forest algorithm works and how to use it."
+    "")
+    st.write("Random Forest algorithm is a powerful tree learning technique in Machine Learning to make predictions and then we do voting of all the tress to make prediction. They are widely used for classification and regression task.")
+    st.write("How it works: FirstProcess starts with a dataset with rows and their corresponding class labels (columns).")
+    st.write("Then - Multiple Decision Trees are created from the training data. Each tree is trained on a random subset of the data (with replacement) and a random subset of features. This process is known as bagging or bootstrap aggregating.")
+    st.write("Each Decision Tree in the ensemble learns to make predictions independently.")
+    st.write("When presented with a new, unseen instance, each Decision Tree in the ensemble makes a prediction.")
+    st.divider()
+
+    st.subheader("Support Ventor Machine (SVM)")
+    st.write("Support Vector Machine (SVM) is a supervised machine learning algorithm used for classification and regression tasks. While it can handle regression problems, "
+    "SVM is particularly well-suited for classification tasks."
+    "SVM aims to find the optimal hyperplane in an N-dimensional space to separate data points into different classes. "
+    "The algorithm maximizes the margin between the closest points of different classes.")
+    st.write(
+    "The key idea behind the SVM algorithm is to find the hyperplane that best separates two classes by maximizing the margin between them. "
+    "This margin is the distance from the hyperplane to the nearest data points (support vectors) on each side.")
+    st.divider()
+
     st.header("Random Forest Classifier Training")
     st.subheader("Data Scailing and Dividing")
     st.code("""
@@ -72,6 +94,17 @@ with mlTab:
     """)
 
 with nnTab:
+    st.header("Get to know the algorithm")
+    st.subheader("Feedforward Neural Networks (FNN)")
+    st.write(
+        "A Feedforward Neural Network (FNN) is a type of artificial neural network where connections between the nodes do not form cycles. This characteristic differentiates it from recurrent neural networks (RNNs). The network consists of an input layer, one or more hidden layers, and an output layer. Information flows in one direction—from input to output—hence the name \"feedforward."\
+    "")
+    st.write("Structure of a Feedforward Neural Network")
+    st.write("1.Input Layer: The input layer consists of neurons that receive the input data. Each neuron in the input layer represents a feature of the input data.")
+    st.write("2.Hidden Layers: One or more hidden layers are placed between the input and output layers. These layers are responsible for learning the complex patterns in the data. Each neuron in a hidden layer applies a weighted sum of inputs followed by a non-linear activation function.")
+    st.write("3.Output Layer: The output layer provides the final output of the network. The number of neurons in this layer corresponds to the number of classes in a classification problem or the number of outputs in a regression problem.")
+    st.divider()
+
     st.header("FNN Training")
     st.subheader("Data Scailing and Dividing")
     st.code("""

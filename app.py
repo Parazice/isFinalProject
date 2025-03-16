@@ -1,12 +1,12 @@
 import streamlit as st
 pages = {
     "Developing": [
-        st.Page("pages/app.py", title="Dataset Preparing"),
-        st.Page("pages/Model Training.py", title="Model Training"),
+        st.Page("./pages/app.py", title="Dataset Preparing"),
+        st.Page("./pages/Model Training.py", title="Model Training"),
     ],
     "Demo": [
-        st.Page("pages/Machine Learning Predict.py", title="Machine Learning"),
-        st.Page("pages/Neural Networks Predict.py", title="Neural Network"),
+        st.Page("./pages/Machine Learning Predict.py", title="Machine Learning"),
+        st.Page("./pages/Neural Networks Predict.py", title="Neural Network"),
     ],
     # "Reference": [
     #     st.Page("views/reference_page.py", title="Reference"),
